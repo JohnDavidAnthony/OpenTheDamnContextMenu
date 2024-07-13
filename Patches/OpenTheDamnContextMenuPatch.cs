@@ -1,14 +1,14 @@
-﻿using EFT.InventoryLogic;
-using EFT.UI;
-using HarmonyLib;
-using SPT.Reflection.Patching;
+﻿using HarmonyLib;
 using System.Reflection;
 using UnityEngine;
+using Aki.Reflection.Patching;
+using EFT.InventoryLogic;
+using EFT.UI;
 
 
 namespace OpenTheDamnContextMenu
 {
-    public class OpenTheContext : ModulePatch
+    public class OpenTheDamnContextMenuPatch : ModulePatch
     {
         protected override MethodBase GetTargetMethod()
         {
@@ -16,8 +16,8 @@ namespace OpenTheDamnContextMenu
         }
 
         // Use reflection to get the private fields
-        private static readonly FieldInfo inventoryControllerField = typeof(ItemUiContext).GetField("inventoryControllerClass", BindingFlags.NonPublic | BindingFlags.Instance);
-        private static readonly FieldInfo itemInfoInteractionsField = typeof(ItemUiContext).GetField("itemInfoInteractionsAbstractClass", BindingFlags.NonPublic | BindingFlags.Instance);
+        private static readonly FieldInfo inventoryControllerField = typeof(ItemUiContext).GetField("gclass2761_0", BindingFlags.NonPublic | BindingFlags.Instance);
+        private static readonly FieldInfo itemInfoInteractionsField = typeof(ItemUiContext).GetField("gclass3020_0", BindingFlags.NonPublic | BindingFlags.Instance);
 
         [PatchPrefix]
         static bool Prefix(ItemUiContext __instance, ItemContextAbstractClass itemContext, Vector2 position)
