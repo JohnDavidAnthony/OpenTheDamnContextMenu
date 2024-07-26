@@ -14,7 +14,7 @@ namespace OpenTheDamnContextMenu
             LogSource = Logger;
             LogSource.LogInfo("OpenTheDamnContextMenu plugin loaded!");
 
-            new OpenTheContext().Enable();
+            new OpenTheDamnContextMenuPatch().Enable();
         }
     }
 }

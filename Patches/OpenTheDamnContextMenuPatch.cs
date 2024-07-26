@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace OpenTheDamnContextMenu
 {
-    public class OpenTheContext : ModulePatch
+    public class OpenTheDamnContextMenuPatch : ModulePatch
     {
         protected override MethodBase GetTargetMethod()
         {
